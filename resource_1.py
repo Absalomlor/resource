@@ -1,8 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
-from pydantic import BaseModel
 from jose import jwt
-import datetime
 
 app = FastAPI()
 
