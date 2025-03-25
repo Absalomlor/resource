@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-import jwt
+from jose import jwt 
 import random
  
 app = FastAPI()
