@@ -2,7 +2,8 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 import random
- 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
 SECRET_KEY = "mysecret"
  
@@ -25,3 +26,10 @@ def verify_jwt(token: str = Depends(oauth2_scheme)):
 def generate_name(token_data: dict = Depends(verify_jwt)):
     name = f'ชื่อของท่านคือ "{random.choice(prefixes)}{random.choice(middles)}{random.choice(suffixes)}"'
     return {"nickname": name}
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # URL ของ Frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],)
