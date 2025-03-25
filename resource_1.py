@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-from jose import jwt 
+from jose import jwt, JWTError
 import random
  
 app = FastAPI()
@@ -18,7 +18,7 @@ def verify_jwt(token: str = Depends(oauth2_scheme)):
         return payload
     except jwt.ExpiredSignatureError:
         raise HTTPException(status_code=401, detail="Token expired")
-    except jwt.InvalidTokenError:
+    except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
  
 @app.get("/ifyouwantcoolname")
