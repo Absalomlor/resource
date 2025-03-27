@@ -54,7 +54,7 @@ items_data = [
         "price": 27,
         "old_price": 52,
         "description": "promotion!! เทศกาลสงกรานต์!",
-        "image": "/picture/1.jpg"
+        "image": "/picture/1.png"
     },
     {
         "id": 2,
@@ -63,7 +63,7 @@ items_data = [
         "price": 82,
         "old_price": None,
         "description": "ผลงานเคยแก้รหัสเฟสให้ยาย",
-        "image": "/picture/2.jpg"
+        "image": "/picture/2.png"
     },
     {
         "id": 3,
@@ -72,7 +72,7 @@ items_data = [
         "price": 99,
         "old_price": None,
         "description": "คลิปหลุดแมวอาบน้ำสระผม",
-        "image": "/picture/3.jpg"
+        "image": "/picture/3.png"
     },
     {
         "id": 4,
@@ -81,7 +81,7 @@ items_data = [
         "price": 30,
         "old_price": None,
         "description": "บัตรประชาชนแมวผู้ใหญ่อายุ2ขวบ",
-        "image": "/picture/4.jpg"
+        "image": "/picture/4.png"
     },
     {
         "id": 5,
@@ -90,7 +90,7 @@ items_data = [
         "price": 27,
         "old_price": None,
         "description": "แอบฟังได้ทุกผนัง (ต้องขอความสมัครใจจากจิ้งจกก่อน)",
-        "image": "/picture/5.jpg"
+        "image": "/picture/5.png"
     },
     {
         "id": 6,
@@ -99,7 +99,7 @@ items_data = [
         "price": 0.99,
         "old_price": 1,
         "description": None,
-        "image": "/picture/6.jpg"
+        "image": "/picture/6.png"
     },
     {
         "id": 7,
@@ -108,7 +108,7 @@ items_data = [
         "price": 46,
         "old_price": None,
         "description": "ส่งรถแห่เข้าซอยเพื่อนบ้านที่เสียงดัง วันละ5ครั้ง",
-        "image": "/picture/7.jpg"
+        "image": "/picture/7.png"
     },
     {
         "id": 8,
@@ -117,7 +117,7 @@ items_data = [
         "price": 1,
         "old_price": None,
         "description": "บริการล้างเงินที่เลอะฝุ่น",
-        "image": "/picture/8.jpg"
+        "image": "/picture/8.png"
     },
     {
         "id": 9,
@@ -126,7 +126,7 @@ items_data = [
         "price": 79,
         "old_price": 999,
         "description": None,
-        "image": "/picture/9.jpg"
+        "image": "/picture/9.png"
     },
     {
         "id": 10,
@@ -135,7 +135,7 @@ items_data = [
         "price": 0.01,
         "old_price": None,
         "description": "เงินเลอะอุนจิ" ,
-        "image": "/picture/10.jpg"
+        "image": "/picture/10.png"
     },
     {
         "id": 11,
@@ -144,7 +144,7 @@ items_data = [
         "price": 100,
         "old_price": None,
         "description": "รับข่วนทุกเบาะ เหมาะกับทุกโซฟา" ,
-        "image": "/picture/11.jpg"
+        "image": "/picture/11.png"
     },
     {
         "id": 12,
@@ -153,7 +153,7 @@ items_data = [
         "price": 12,
         "old_price": None,
         "description": None,
-        "image": "/picture/12.jpg"
+        "image": "/picture/12.png"
     },
     {
         "id": 13,
@@ -162,7 +162,7 @@ items_data = [
         "price": 3,
         "old_price": None,
         "description": "กด follow ไอจีเป้าหมาย" ,
-        "image": "/picture/13.jpg"
+        "image": "/picture/13.png"
     },
     {
         "id": 14,
@@ -171,7 +171,7 @@ items_data = [
         "price": 0.01,
         "old_price": None,
         "description": None ,
-        "image": "/picture/14.jpg"
+        "image": "/picture/14.png"
     }
 ]
 
