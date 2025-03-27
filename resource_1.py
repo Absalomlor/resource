@@ -45,7 +45,7 @@ items_data = [
         "price": 27,
         "old_price": 52,
         "description": "promotion!! เทศกาลสงกรานต์!",
-        "image": "https://via.placeholder.com/150?text=Gun"
+        "image": "/picture/1.jpg"
     },
     {
         "id": 2,
@@ -54,7 +54,7 @@ items_data = [
         "price": 82,
         "old_price": None,
         "description": "ผลงานเคยแก้รหัสเฟสให้ยาย",
-        "image": "https://via.placeholder.com/150?text=Hacker"
+        "image": "/picture/2.jpg"
     },
     {
         "id": 3,
@@ -63,7 +63,7 @@ items_data = [
         "price": 99,
         "old_price": None,
         "description": "คลิปหลุดแมวอาบน้ำสระผม",
-        "image": "https://via.placeholder.com/150?text=Cat"
+        "image": "/picture/3.jpg"
     },
     {
         "id": 4,
