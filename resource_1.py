@@ -2,6 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
 from jose import jwt
 import random
 
@@ -31,8 +32,16 @@ def verify_jwt(token: str = Depends(oauth2_scheme)):
         raise HTTPException(status_code=401, detail="Token expired")
     except jwt.JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
-    
-@app.get("/ifyouwantcoolname")
+
+def has_role(allowed_roles: List[str]):
+    def role_checker(token_data: dict = Depends(verify_jwt)):
+        user_role = token_data.get("role")
+        if user_role not in allowed_roles:
+            raise HTTPException(status_code=403, detail="Permission denied")
+        return token_data
+    return role_checker
+
+@app.get("/ifyouwantcoolname", dependencies=[Depends(has_role(["member", "guest"]))])
 def generate_name(token_data: dict = Depends(verify_jwt)):
     name = f"{random.choice(prefixes)}{random.choice(middles)}{random.choice(suffixes)}"
     return {"nickname": name}
@@ -166,6 +175,6 @@ items_data = [
     }
 ]
 
-@app.get("/items")
+@app.get("/items", dependencies=[Depends(has_role(["member"]))])
 def get_items(token_data: dict = Depends(verify_jwt)):
     return items_data
