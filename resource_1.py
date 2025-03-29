@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 from jose import jwt
 import random
+import requests
 
 app = FastAPI()
 
@@ -24,14 +25,17 @@ prefixes = ['ผู้พิชิต', 'เทพเจ้า', 'จอมเ�
 middles = ['หมัดเมา', 'มาม่าจานสุดท้าย', 'หมึกทอด', 'ไข่ตุ๋น', 'สามช่า', 'ไข่ดาว', 'ไวไฟหลุด', 'ข้าวมันไก่', 'หมูกรอบ', 'ข้าวขาหมู']
 suffixes = ['ไร้เทียมทาน', 'ระดับจักรวาล', 'แห่งความว่างเปล่า', 'อมตะ', 'พันปี', 'ผู้ถูกลืม', 'แห่งดวงจันทร์ จะลงทัณฑ์แกเอง', 'สีรุ้ง', 'ตดไร้กลิ่น', 'แห่งมหานครนิวยอร์ก', 'ฟรุ้งฟริ้ง']
 
+AUTH_SERVER = "https://real-authen.onrender.com"
+
 def verify_jwt(token: str = Depends(oauth2_scheme)):
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
-        return payload
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(status_code=401, detail="Token expired")
-    except jwt.JWTError:
-        raise HTTPException(status_code=401, detail="Invalid token")
+        response = requests.post(f"{AUTH_SERVER}/verify_token", json={"token": token})
+        if response.status_code == 200:
+            return response.json()
+        else:
+            raise HTTPException(status_code=401, detail="Invalid token")
+    except Exception:
+        raise HTTPException(status_code=401, detail="Token verification failed")
 
 def has_role(allowed_roles: List[str]):
     def role_checker(token_data: dict = Depends(verify_jwt)):
