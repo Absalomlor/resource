@@ -9,13 +9,11 @@ import requests
 
 app = FastAPI()
 
-SECRET_KEY = "mysecret"
-
 app.mount("/picture", StaticFiles(directory="picture"), name="picture")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://darknotfound404.web.app"], 
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
